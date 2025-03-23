@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import Image from "next/image";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const raceDistances = [
@@ -50,7 +49,6 @@ const PaceCalculator = () => {
 
   return (
     <div className="p-6 max-w-lg mx-auto text-center">
-      <Image src="/logo/logo.png" alt="NB Athletics Coach Logo" width={150} height={150} className="mx-auto mb-4" />
       <h1 className="text-2xl font-bold mb-4">NB Athletics Pace Calculator</h1>
       <Card>
         <CardContent>
