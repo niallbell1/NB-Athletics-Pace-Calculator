@@ -27,21 +27,25 @@ const PaceCalculator = () => {
   }, []);
 
   const calculatePace = () => {
-    if (time && distance) {
-      const totalMinutes = parseFloat(time);
-      const totalDistance = parseFloat(distance);
-      const pacePerMile = (totalMinutes / totalDistance).toFixed(2);
-      setPace(pacePerMile);
+    if (!time || !distance || isNaN(time) || isNaN(distance)) {
+      alert("Please enter valid numbers for time and distance.");
+      return;
     }
+    const totalMinutes = parseFloat(time);
+    const totalDistance = parseFloat(distance);
+    const pacePerMile = (totalMinutes / totalDistance).toFixed(2);
+    setPace(pacePerMile);
   };
 
   const saveProfile = () => {
-    if (name && pace) {
-      const newProfile = { name, time, distance, pace, gender, selectedRace };
-      const updatedProfiles = [...savedProfiles, newProfile];
-      setSavedProfiles(updatedProfiles);
-      localStorage.setItem("runnerProfiles", JSON.stringify(updatedProfiles));
+    if (!name || !pace) {
+      alert("Please enter a name and calculate pace before saving.");
+      return;
     }
+    const newProfile = { name, time, distance, pace, gender, selectedRace };
+    const updatedProfiles = [...savedProfiles, newProfile];
+    setSavedProfiles(updatedProfiles);
+    localStorage.setItem("runnerProfiles", JSON.stringify(updatedProfiles));
   };
 
   return (
@@ -84,17 +88,3 @@ const PaceCalculator = () => {
 };
 
 export default PaceCalculator;
-import PaceCalculator from "@/components/PaceCalculator";
-
-export default function Home() {
-  return <PaceCalculator />;
-}
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    unoptimized: true,
-  },
-};
-
-module.exports = nextConfig;
