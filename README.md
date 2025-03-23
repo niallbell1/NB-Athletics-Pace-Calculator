@@ -84,3 +84,8 @@ const PaceCalculator = () => {
 };
 
 export default PaceCalculator;
+import PaceCalculator from "@/components/PaceCalculator";
+
+export default function Home() {
+  return <PaceCalculator />;
+}
