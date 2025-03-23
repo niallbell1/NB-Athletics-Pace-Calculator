@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card"; // Adjust this path as needed
+import { Button } from "@/components/ui/button"; // Adjust this path as needed
+import { Input } from "@/components/ui/input"; // Adjust this path as needed
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const raceDistances = [
