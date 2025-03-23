@@ -52,16 +52,44 @@ const PaceCalculator = () => {
       <h1 className="text-2xl font-bold mb-4">NB Athletics Pace Calculator</h1>
       <Card>
         <CardContent>
-          <Input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} className="mb-2" />
-          <Input placeholder="Time (minutes)" value={time} onChange={(e) => setTime(e.target.value)} className="mb-2" />
-          <Input placeholder="Distance (miles)" value={distance} onChange={(e) => setDistance(e.target.value)} className="mb-2" />
+          <Input
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="mb-2"
+            aria-label="Name"
+          />
+          <Input
+            placeholder="Time (minutes)"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+            className="mb-2"
+            aria-label="Time"
+          />
+          <Input
+            placeholder="Distance (miles)"
+            value={distance}
+            onChange={(e) => setDistance(e.target.value)}
+            className="mb-2"
+            aria-label="Distance"
+          />
           
-          <select value={gender} onChange={(e) => setGender(e.target.value)} className="mb-2 p-2 border rounded w-full">
+          <select
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+            className="mb-2 p-2 border rounded w-full"
+            aria-label="Gender"
+          >
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
           
-          <select value={selectedRace} onChange={(e) => setSelectedRace(e.target.value)} className="mb-2 p-2 border rounded w-full">
+          <select
+            value={selectedRace}
+            onChange={(e) => setSelectedRace(e.target.value)}
+            className="mb-2 p-2 border rounded w-full"
+            aria-label="Race Distance"
+          >
             {raceDistances.map((race) => (
               <option key={race} value={race}>{race}</option>
             ))}
@@ -74,10 +102,22 @@ const PaceCalculator = () => {
       </Card>
       
       <div className="flex justify-center gap-4 mt-4">
-        <a href="https://www.facebook.com/profile.php?id=61571612726559" target="_blank" rel="noopener noreferrer" className="text-blue-600 text-2xl">
+        <a
+          href="https://www.facebook.com/profile.php?id=61571612726559"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 text-2xl"
+          aria-label="Facebook"
+        >
           <FaFacebook />
         </a>
-        <a href="https://www.instagram.com/nbathleticscoach/" target="_blank" rel="noopener noreferrer" className="text-pink-500 text-2xl">
+        <a
+          href="https://www.instagram.com/nbathleticscoach/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-pink-500 text-2xl"
+          aria-label="Instagram"
+        >
           <FaInstagram />
         </a>
       </div>
