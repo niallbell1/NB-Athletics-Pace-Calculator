@@ -89,3 +89,12 @@ import PaceCalculator from "@/components/PaceCalculator";
 export default function Home() {
   return <PaceCalculator />;
 }
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
+};
+
+module.exports = nextConfig;
