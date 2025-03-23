@@ -5,7 +5,10 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
-const raceDistances = ["5K", "10K", "Half Marathon", "Marathon"];
+const raceDistances = [
+  "400m", "800m", "1km", "1500m", "1 mile", "2km", "3km", 
+  "5K", "10K", "5 mile", "10 mile", "Half Marathon", "Marathon"
+];
 
 const PaceCalculator = () => {
   const [time, setTime] = useState("");
@@ -43,7 +46,7 @@ const PaceCalculator = () => {
 
   return (
     <div className="p-6 max-w-lg mx-auto text-center">
-      <Image src="/logo/image.png" alt="NB Athletics Coach Logo" width={150} height={150} className="mx-auto mb-4" />
+      <Image src="/logo/logo.png" alt="NB Athletics Coach Logo" width={150} height={150} className="mx-auto mb-4" />
       <h1 className="text-2xl font-bold mb-4">NB Athletics Pace Calculator</h1>
       <Card>
         <CardContent>
