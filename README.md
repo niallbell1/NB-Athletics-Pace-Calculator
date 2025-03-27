@@ -5,8 +5,7 @@ import { Input } from "@/components/ui/input"; // Adjust this path as needed
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const raceDistances = [
-  "400m", "800m", "1km", "1500m", "1 mile", "2km", "3km", 
-  "5K", "10K", "5 mile", "10 mile", "Half Marathon", "Marathon"
+  "400m", "800m", "1km", "1500m", "1 mile", "2km", "3km", "5K", "10K", "5 mile", "10 mile", "Half Marathon", "Marathon"
 ];
 
 const PaceCalculator = () => {
@@ -48,58 +47,54 @@ const PaceCalculator = () => {
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto text-center">
-      <h1 className="text-2xl font-bold mb-4">NB Athletics Pace Calculator</h1>
-      <Card>
-        <CardContent>
-          <Input
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="mb-2"
-            aria-label="Name"
-          />
-          <Input
-            placeholder="Time (minutes)"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-            className="mb-2"
-            aria-label="Time"
-          />
-          <Input
-            placeholder="Distance (miles)"
-            value={distance}
-            onChange={(e) => setDistance(e.target.value)}
-            className="mb-2"
-            aria-label="Distance"
-          />
-          
-          <select
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-            className="mb-2 p-2 border rounded w-full"
-            aria-label="Gender"
-          >
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-          
-          <select
-            value={selectedRace}
-            onChange={(e) => setSelectedRace(e.target.value)}
-            className="mb-2 p-2 border rounded w-full"
-            aria-label="Race Distance"
-          >
-            {raceDistances.map((race) => (
-              <option key={race} value={race}>{race}</option>
-            ))}
-          </select>
-          
-          <Button onClick={calculatePace} className="w-full mb-2">Calculate Pace</Button>
-          {pace && <p className="text-lg">Pace: {pace} min/mile</p>}
-          <Button onClick={saveProfile} className="w-full mt-2">Save Profile</Button>
-        </CardContent>
-      </Card>
+    <div>
+      <h1>NB Athletics Pace Calculator</h1>
+      <Input
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="mb-2"
+        aria-label="Name"
+      />
+      <Input
+        placeholder="Time (minutes)"
+        value={time}
+        onChange={(e) => setTime(e.target.value)}
+        className="mb-2"
+        aria-label="Time"
+      />
+      <Input
+        placeholder="Distance (miles)"
+        value={distance}
+        onChange={(e) => setDistance(e.target.value)}
+        className="mb-2"
+        aria-label="Distance"
+      />
+      
+      <select
+        value={gender}
+        onChange={(e) => setGender(e.target.value)}
+        className="mb-2 p-2 border rounded w-full"
+        aria-label="Gender"
+      >
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      
+      <select
+        value={selectedRace}
+        onChange={(e) => setSelectedRace(e.target.value)}
+        className="mb-2 p-2 border rounded w-full"
+        aria-label="Race Distance"
+      >
+        {raceDistances.map((race) => (
+          <option key={race} value={race}>{race}</option>
+        ))}
+      </select>
+      
+      <Button onClick={calculatePace} className="w-full mb-2">Calculate Pace</Button>
+      {pace && <p className="text-lg">Pace: {pace} min/mile</p>}
+      <Button onClick={saveProfile} className="w-full mt-2">Save Profile</Button>
       
       <div className="flex justify-center gap-4 mt-4">
         <a
